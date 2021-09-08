@@ -1,0 +1,260 @@
+:root {
+    --green: #11ac52;
+    --dark: #252525;
+    --yellow: #fccb13;
+    --grey: #e5e5e5;
+    --time: .3s;
+    --height: calc(100vh - 238px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'arial';
+}
+
+/* body {
+    background-color: #261810;
+} */
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 5px black;
+}
+
+header {
+    height: 150px;
+    background-image: url(../Images/forest.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header div {
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 146px, rgba(255,255,255,0) 45%);
+}
+
+header div img {
+    height: 100%;
+    margin-left: 2%;
+}
+
+
+nav {
+    background-color: #010D00;
+    color: #F2CE16;
+    box-shadow: 0 0 5px black;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 50px 5px 0;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .3s;
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -30px;
+    background-color: rgba(250,250,250,.2);
+    transform: rotate(-30deg);
+    padding: 30px 10px;
+    transition: .5s;
+}
+
+nav ul li:hover {
+    background-color: black;
+    box-shadow: 0 0 5px grey;
+
+}
+
+nav ul li:hover::after {
+    left: 125px;
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+    min-height: var(--height);
+}
+
+main section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: .3s;
+}
+
+.container {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgba(0,0,0, .4);
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    background-color: rgba(250,250,250,.6);
+}
+
+.container p {
+    background-color: rgba(250,250,250,.6);
+}
+
+.about {
+    background-image: url(../Images/dog.png);
+}
+
+.ourDogs {
+    background-image: url(../Images/dog3.png);
+}
+
+.gallery {
+    background-image: url(../Images/dog2.png);
+
+}
+
+.gallery .container {
+    backdrop-filter: blur(5px);
+}
+
+.galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.galleryContainer img {
+    position: relative;
+    width: 30%;
+    transition: .3s;
+    border-radius: 4px;
+}
+
+.galleryContainer img:hover {
+    transform: scale(1.2);
+}
+
+.contact {
+    background-image: url(../Images/field.jpg);
+}
+
+.contact .container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.contact .container div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    /* align-self: center; */
+    padding: 20px;
+    flex-basis: 50%;
+}
+
+textarea:focus, input:focus, button:focus{
+    outline: none;
+    color: black;
+}
+
+textarea::placeholder, input::placeholder {
+    color: black;
+}
+
+.contact form input, textarea {
+    border: 1px solid black;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(250,250,250,.6);
+}
+
+.contact form  button {
+    padding: 10px;
+    background-color: black;
+    border: none;
+    color: #F2CE16;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact form  button:hover {
+    box-shadow: 0 0 5px white;
+}
+
+.contact img {
+    margin: 30px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px black;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    line-height: 50px;
+    text-align: center;
+    background-color: #010D00;
+    color: #F2CE16;
+}
+
+footer a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: grey;
+}
+
+
+/* features */
+
+section.off {
+    left: 100%;
+}
+
+/* 
+1. Dodaj annimacje do przycisków inne.
+2. Zastanów się nad animacją na powitanie
+3. Dodaj bibliotekę lightbox
+4. Logo niech odpala główną stronę
+5. Hover na btn w formularzu
+6. Dodaj mapę
+*/
