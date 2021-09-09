@@ -1,10 +1,10 @@
 :root {
     --green: #11ac52;
-    --dark: #252525;
-    --yellow: #fccb13;
-    --grey: #e5e5e5;
+    --black: #242526;
+    --yellow: #F2CE16;
     --time: .3s;
-    --height: calc(100vh - 238px);
+    --height: calc(100vh - 223px);
+    /* --height: 100vh; */
 }
 
 * {
@@ -49,8 +49,8 @@ header div img {
 
 
 nav {
-    background-color: #010D00;
-    color: #F2CE16;
+    background-color: var(--black);
+    color: var(--yellow);
     box-shadow: 0 0 5px black;
 }
 
@@ -95,14 +95,16 @@ nav ul li:hover::after {
 main {
     position: relative;
     overflow: hidden;
-    min-height: var(--height);
+    min-height: calc(100vh - 223px);
+    /* background-color: var(--black); */
+    /* background-color: pink; */
 }
 
 main section {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    min-height: 100%;
+    min-height: var(--height);
     min-width: 100%;
     display: flex;
     background-repeat: no-repeat;
@@ -114,22 +116,44 @@ main section {
 .container {
     margin: 10px;
     padding: 5px;
-    text-align: center;
     border-radius: 4px;
-    background-color: rgba(0,0,0, .4);
+    background-color: rgba(250,250,250, .4);
 }
 
 .container h1 {
+    text-align: center;
     margin-bottom: 20px;
-    background-color: rgba(250,250,250,.6);
-}
-
-.container p {
-    background-color: rgba(250,250,250,.6);
 }
 
 .about {
     background-image: url(../Images/dog.png);
+}
+
+.element {
+    display: flex;
+    margin: 25px 0;
+    padding: 10px;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.element:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.element p {
+    margin: 0 20px;
+    padding: 40px;
+    background-color: rgba(250,250,250,.6);
+    border-radius: 4px;
+}
+
+.element i {
+    padding: 45px;
+    font-size: 95px;
+    color: var(--yellow);
+    background-color: var(--black);
+    border-radius: 150px;
 }
 
 .ourDogs {
@@ -147,21 +171,24 @@ main section {
 
 .galleryContainer {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    height: 100%;
-    justify-content: space-around;
-    align-content: space-around;
+    justify-content: space-evenly;
 }
 
-.galleryContainer img {
-    position: relative;
-    width: 30%;
-    transition: .3s;
+.galleryContainer a {
+    
+    margin: 15px;
+    flex-basis: 40%;
+    box-shadow: 0 0 5px black;
     border-radius: 4px;
+    /* width: 30%; */
 }
 
-.galleryContainer img:hover {
-    transform: scale(1.2);
+.galleryContainer a img {
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
 }
 
 .contact {
@@ -174,86 +201,66 @@ main section {
    flex-direction: column;
 }
 
-.contact .container div {
+.contactData {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    height: 100%;
-    justify-content: space-around;
-    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.contact form {
-    display: flex;
-    flex-direction: column;
-    /* align-self: center; */
-    padding: 20px;
-    flex-basis: 50%;
+.contactData i {
+    padding: 45px;
+    margin-bottom: 10px;
+    font-size: 65px;
+    color: var(--yellow);
+    background-color: var(--black);
+    border-radius: 150px;
 }
 
-textarea:focus, input:focus, button:focus{
-    outline: none;
-    color: black;
+.contactData p {
+    margin: 5px 0;
+    text-align: center;
 }
 
-textarea::placeholder, input::placeholder {
-    color: black;
-}
 
-.contact form input, textarea {
-    border: 1px solid black;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: rgba(250,250,250,.6);
-}
 
-.contact form  button {
-    padding: 10px;
-    background-color: black;
-    border: none;
-    color: #F2CE16;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.contact form  button:hover {
-    box-shadow: 0 0 5px white;
-}
-
-.contact img {
-    margin: 30px;
-    border-radius: 4px;
+.contact iframe {
     box-shadow: 0 0 5px black;
+    flex-basis: 100%;
 }
 
 footer {
     display: flex;
     justify-content: center;
-    line-height: 50px;
+    line-height: 35px;
     text-align: center;
-    background-color: #010D00;
-    color: #F2CE16;
+    background-color: var(--black);
+    color: var(--yellow);
 }
 
 footer a {
     margin-left: 10px;
     text-decoration: none;
-    color: grey;
+    color: #F2F2F2;
+    transition: .3s;
+}
+
+footer a:hover {
+    color: var(--yellow);
+    text-decoration: underline;
 }
 
 
 /* features */
 
 section.off {
+    position: absolute;
     left: 100%;
 }
 
 /* 
 1. Dodaj annimacje do przycisków inne.
 2. Zastanów się nad animacją na powitanie
-3. Dodaj bibliotekę lightbox
+
 4. Logo niech odpala główną stronę
 5. Hover na btn w formularzu
 6. Dodaj mapę
