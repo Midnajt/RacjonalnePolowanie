@@ -14,9 +14,14 @@
     font-family: 'arial';
 }
 
-/* body {
-    background-color: #261810;
-} */
+body {
+    /* background-image: url(../Images/forest.jpg); */
+    background-image: url(../Images/forest.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+     background-attachment: fixed;
+}
 
 .wrapper {
     display: flex;
@@ -68,6 +73,7 @@ nav ul li {
     padding: 5px 10px;
     cursor: pointer;
     overflow: hidden;
+    white-space: nowrap;
     transition: .3s;
 }
 
@@ -85,11 +91,12 @@ nav ul li::after {
 nav ul li:hover {
     background-color: black;
     box-shadow: 0 0 5px grey;
+    border-radius: 4px;
 
 }
 
 nav ul li:hover::after {
-    left: 125px;
+    animation: flash .6s both;
 }
 
 main {
@@ -116,24 +123,29 @@ main section {
 .container {
     margin: 10px;
     padding: 5px;
+    width: 100%;
     border-radius: 4px;
-    background-color: rgba(250,250,250, .4);
+    /* background-color: rgba(250,250,250, .4); */
+}
+
+.container:first-child {
+    overflow: hidden;
 }
 
 .container h1 {
-    text-align: center;
     margin-bottom: 20px;
-}
-
-.about {
-    background-image: url(../Images/dog.png);
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(250,250,250,.6);
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
 }
 
 .element {
     display: flex;
     margin: 25px 0;
     padding: 10px;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 }
 
@@ -144,16 +156,37 @@ main section {
 .element p {
     margin: 0 20px;
     padding: 40px;
+    flex-basis: 70%;
     background-color: rgba(250,250,250,.6);
     border-radius: 4px;
+    backdrop-filter: blur(5px);
 }
 
-.element i {
-    padding: 45px;
-    font-size: 95px;
-    color: var(--yellow);
+.icon {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    text-align: center;
     background-color: var(--black);
     border-radius: 150px;
+    border: 5px solid black;
+    animation: itemEffect 1s;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.icon:hover {
+    transform: rotateZ(45deg);
+}
+
+.icon i {
+    line-height: 150px;
+    color: var(--yellow);
+    font-size: 80px;
+}
+
+.about {
+    background-image: url(../Images/dog.png);
 }
 
 .ourDogs {
@@ -163,10 +196,6 @@ main section {
 .gallery {
     background-image: url(../Images/dog2.png);
 
-}
-
-.gallery .container {
-    backdrop-filter: blur(5px);
 }
 
 .galleryContainer {
@@ -180,7 +209,6 @@ main section {
     
     margin: 15px;
     flex-basis: 40%;
-    box-shadow: 0 0 5px black;
     border-radius: 4px;
     /* width: 30%; */
 }
@@ -189,6 +217,12 @@ main section {
     height: 100%;
     width: 100%;
     border-radius: 4px;
+    box-shadow: 0 0 5px black;
+    transition: .3s;
+}
+
+.galleryContainer a img:hover {
+    transform: scale(1.05);
 }
 
 .contact {
@@ -207,13 +241,31 @@ main section {
     align-items: center;
 }
 
-.contactData i {
-    padding: 45px;
-    margin-bottom: 10px;
-    font-size: 65px;
-    color: var(--yellow);
-    background-color: var(--black);
-    border-radius: 150px;
+.contactData .icon {
+    margin: 0 auto 10px auto;
+}
+
+.contactData  .icon:hover {
+    transform: unset;
+}
+
+.contactData  .icon i {
+    position: relative;
+    top: 0;
+    transition: .3s;
+}
+
+.contactData  .home:hover i {
+    transform: scale(1.2);
+}
+
+.contactData  .phone:hover i {
+    animation: ring 4s ease-in-out
+}
+
+
+.contactData  .meil:hover i {
+    animation: meil 1s;
 }
 
 .contactData p {
@@ -221,11 +273,10 @@ main section {
     text-align: center;
 }
 
-
-
 .contact iframe {
-    box-shadow: 0 0 5px black;
     flex-basis: 100%;
+    margin-top: 15px;
+    box-shadow: 0 0 5px black;
 }
 
 footer {
@@ -257,11 +308,68 @@ section.off {
     left: 100%;
 }
 
-/* 
-1. Dodaj annimacje do przycisków inne.
-2. Zastanów się nad animacją na powitanie
+/* .feature {
+    background-color: black;
+    box-shadow: 0 0 5px grey;
+} */
 
-4. Logo niech odpala główną stronę
-5. Hover na btn w formularzu
-6. Dodaj mapę
-*/
+.feature::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -30px;
+    background-color: rgba(250,250,250,.2);
+    transform: rotate(-30deg);
+    padding: 30px 10px;
+    transition: .5s;
+    animation: flash .6s both;
+}
+
+
+/* ANIMACJE */
+
+@keyframes flash {
+    0% {    left: -30px;}
+    99.99% {    left: 135px;}
+    100% {left: -30px;}
+}
+
+@keyframes itemEffect {
+    0% {transform: scale(0);}
+    70% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+@keyframes meil {
+    0% {top: 0;}
+    50% {top: 100px;}
+    50.1% {top: -100px;}
+    100% {top: 0;}
+}
+
+@keyframes ring {
+    0% { transform: rotate(0); }
+    1% { transform: rotate(30deg); }
+    3% { transform: rotate(-28deg); }
+    5% { transform: rotate(34deg); }
+    7% { transform: rotate(-32deg); }
+    9% { transform: rotate(30deg); }
+    11% { transform: rotate(-28deg); }
+    13% { transform: rotate(26deg); }
+    15% { transform: rotate(-24deg); }
+    17% { transform: rotate(22deg); }
+    19% { transform: rotate(-20deg); }
+    21% { transform: rotate(18deg); }
+    23% { transform: rotate(-16deg); }
+    25% { transform: rotate(14deg); }
+    27% { transform: rotate(-12deg); }
+    29% { transform: rotate(10deg); }
+    31% { transform: rotate(-8deg); }
+    33% { transform: rotate(6deg); }
+    35% { transform: rotate(-4deg); }
+    37% { transform: rotate(2deg); }
+    39% { transform: rotate(-1deg); }
+    41% { transform: rotate(1deg); }
+    43% { transform: rotate(0); }
+    100% { transform: rotate(0); }
+  }
