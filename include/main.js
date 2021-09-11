@@ -28,9 +28,9 @@ document.querySelector('header img').addEventListener('click', ()=>{
 lis = [...document.querySelectorAll('li')];
 
 setInterval(()=>{
-    let number = Math.floor(Math.random() * 4)
+    let randomNumber = Math.floor(Math.random() * 4)
     for ( let i = 0; lis.length > i; i++ ) {
-        if ( i === number ) {
+        if ( i === randomNumber ) {
             lis[i].classList.add('feature')
             setTimeout(()=>{
                 lis[i].classList.remove('feature')
