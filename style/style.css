@@ -32,7 +32,6 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     max-width: 1200px;
-    min-height: 100vh;
     margin: 0 auto;
     -webkit-box-shadow: 0 0 5px black;
             box-shadow: 0 0 5px black;
@@ -119,15 +118,12 @@ nav ul li:hover::after {
 main {
     position: relative;
     overflow: hidden;
-    min-height: calc(100vh - 223px);
 }
 
 main section {
     position: relative;
     top: 0;
     left: 0;
-    min-height: calc(100vh - 223px);
-    min-width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -242,7 +238,7 @@ main section {
 }
 
 .about {
-    background-image: url(../Images/dog.png);
+    background-image: url(../Images/photo_4.jpg);
 }
 
 .about h1 {
@@ -273,7 +269,7 @@ main section {
 }
 
 .ourDogs {
-    background-image: url(../Images/photo_4.jpg);
+    background-image: url(../Images/photo_5.jpg);
 }
 
 .ourDogs h1 {
@@ -377,6 +373,7 @@ img:hover {
 
 .contact {
     background-image: url(../Images/field.jpg);
+    min-height: calc(100vh - 223px);
 }
 
 .contact .container {
@@ -436,6 +433,7 @@ img:hover {
 .contactData p {
     margin: 5px 0;
     padding: 5px;
+    font-weight: bold;
     text-align: center;
     white-space: nowrap;
     border-radius: 4px;
