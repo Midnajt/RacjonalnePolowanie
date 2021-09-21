@@ -14,7 +14,7 @@
 }
 
 body {
-    background-image: url(../Images/forest.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../Images/forest.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -57,6 +57,10 @@ header div img {
     margin-left: 2%;
 }
 
+header div img:hover {
+    transform: unset;
+}
+
 nav {
     background-color: var(--black);
     color: var(--yellow);
@@ -85,6 +89,11 @@ nav ul li {
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
+}
+
+nav ul li a {
+    color: var(--yellow);
+    text-decoration: unset;
 }
 
 nav ul li::after {
