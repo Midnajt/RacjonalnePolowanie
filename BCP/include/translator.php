@@ -61,7 +61,7 @@ class Translator {
                 $this->oHodowli = 'O hodowli';
                 $this->naszePsy = 'Nasze psy';
                 $this->galeria = 'Galeria';
-                $this->kontakt = 'Kontakt';
+                $this->kontakt = 'kontakt';
                 $this->dlaczegoHodowlaRacjonalnePolowanie = 'Dlaczego hodowla Racjonalne Polowanie?';
                 $this->txt1 = 'Hodowla jest prowadzona przez myśliwego który łowiectwo ma we krwi od pokoleń i od dekad towarzyszy mu czteronogi przyjaciel podczas polowań.';
                 $this->txt2 = 'Pies myśliwski z odpowiedniej linii i hodowli to gwarancja dobrego użytkowego psa myśliwskiego i ta hodowla zapewni Ci to.';

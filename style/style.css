@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root {
@@ -14,6 +15,8 @@
 }
 
 body {
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.527)),to(rgba(0, 0, 0, 0.5))), url(../Images/forest.jpg);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../Images/forest.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(../Images/forest.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,12 +61,18 @@ header div img {
 }
 
 header div img:hover {
-    transform: unset;
+    -webkit-transform: unset;
+        -ms-transform: unset;
+            transform: unset;
 }
 
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--black);
     color: var(--yellow);
     -webkit-box-shadow: 0 0 5px black;
@@ -71,7 +80,9 @@ nav {
 }
 
 nav ul {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -512,6 +523,8 @@ section.off {
     width: 25px;
     height: 25px;
     border-radius: 25px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
     background-color: var(--black);
 }
@@ -521,25 +534,36 @@ section.off {
 }
 
 .lang a:hover img{
-    box-shadow: 0 0 5px lightgrey;
+    -webkit-box-shadow: 0 0 5px lightgrey;
+            box-shadow: 0 0 5px lightgrey;
 }
 
 .lang a:nth-child(2) {
     /* display: none; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: absolute;
     top: 33px;
     left: -5px;
     height: 35px;
     width: 35px;
     opacity: 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
 }
 
 
 .lang img {
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
     width: 100%;
     height: 100%;
@@ -550,7 +574,9 @@ section.off {
 }
 
 .lang img:hover {
-    transform: unset;
+    -webkit-transform: unset;
+        -ms-transform: unset;
+            transform: unset;
 }
 
 @-webkit-keyframes flash {
@@ -652,7 +678,9 @@ section.off {
     }
 
     nav ul {
-        flex-grow: 1;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
         position: relative;
         padding: 10px 0;
         -ms-flex-pack: distribute;

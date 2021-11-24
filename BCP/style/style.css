@@ -62,6 +62,8 @@ header div img:hover {
 }
 
 nav {
+    display: flex;
+    align-items: center;
     background-color: var(--black);
     color: var(--yellow);
     -webkit-box-shadow: 0 0 5px black;
@@ -69,13 +71,14 @@ nav {
 }
 
 nav ul {
+    flex-grow: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    padding: 5px 50px 5px 0;
+    padding: 5px 0 5px 0;
     list-style: none;
 }
 
@@ -294,10 +297,10 @@ main section {
     width: 200px;
     border-radius: 100px;
     -webkit-box-shadow: 0 0 10px black;
-            box-shadow: 0 0 10px black; 
-    -webkit-transition: .3s; 
-    -o-transition: .3s; 
-    transition: .3s;   
+            box-shadow: 0 0 10px black;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
 }
 
 .achivments {
@@ -357,7 +360,6 @@ div.achivments div a img {
 }
 
 .galleryContainer a {
-    
     margin: 15px;
     -ms-flex-preferred-size: 35%;
         flex-basis: 35%;
@@ -499,6 +501,58 @@ section.off {
             animation: flash .6s both;
 }
 
+.lang {
+    position: relative;
+    z-index: 1;
+}
+
+.lang a {
+    display: block;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    transition: .3s;
+    background-color: var(--black);
+}
+
+.lang:hover a:nth-child(2) {
+    opacity: 1;
+}
+
+.lang a:hover img{
+    box-shadow: 0 0 5px lightgrey;
+}
+
+.lang a:nth-child(2) {
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 33px;
+    left: -5px;
+    height: 35px;
+    width: 35px;
+    opacity: 0;
+    transition: .3s;
+}
+
+
+.lang img {
+    transition: .3s;
+    width: 100%;
+    height: 100%;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.lang img:hover {
+    transform: unset;
+}
+
 @-webkit-keyframes flash {
     0% {    left: -30px;}
     99.99% {    left: 135px;}
@@ -598,6 +652,8 @@ section.off {
     }
 
     nav ul {
+        flex-grow: 1;
+        position: relative;
         padding: 10px 0;
         -ms-flex-pack: distribute;
             justify-content: space-around;
@@ -661,7 +717,7 @@ section.off {
     .galleryContainer a {
         margin: 10px;
     }
-    
+
     .contactData {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -687,6 +743,7 @@ section.off {
 
     nav ul li {
         padding: 5px;
+        border-right: 1px solid var(--yellow);
     }
 
     .element div:first-child {

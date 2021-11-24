@@ -1,3 +1,10 @@
+<?php
+    require_once("include/translator.php");
+
+    $translate = new Translator();
+    $translate->translate();
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -22,21 +29,25 @@
         </header>
         <nav>
             <ul>
-                <li data-section='about'><a href="#">O hodowli</a></li>
-                <li data-section='ourDogs'><a href="#">Nasze psy</a></li>
-                <li data-section='gallery'><a href="#">Galeria</a></li>
-                <li data-section='contact'><a href="#">Kontakt</a></li>
+                <li class='li' data-section='about'><a href="#"><?php echo $translate->oHodowli; ?></a></li>
+                <li class='li' data-section='ourDogs'><a href="#"><?php echo $translate->naszePsy; ?></a></li>
+                <li class='li' data-section='gallery'><a href="#"><?php echo $translate->galeria; ?></a></li>
+                <li class='li' data-section='contact'><a href="#"><?php echo $translate->kontakt; ?></a></li>
             </ul>
+            <div class="lang">
+                <a href="?lang=pl"><img src="Images/pl.jpg" alt="pl"></a>
+                <a href="?lang=eng"><img src="Images/eng.png" alt="eng"></a>
+            </div>
         </nav>
         <main>
             <section class='about'>
                 <div class="container">
-                    <h1>O hodowli</h1>
+                    <h1><?php echo $translate->oHodowli; ?></h1>
                     <div class="element">
                         <div>
-                            <h2>Dlaczego hodowla Racjonalne Polowanie?</h2>
-                            <p>Hodowla jest prowadzona przez myśliwego który łowiectwo ma we krwi od pokoleń i od dekad towarzyszy mu czteronogi przyjaciel podczas polowań.</p>
-                            <p>Pies myśliwski z odpowiedniej linii i hodowli to gwarancja dobrego użytkowego psa myśliwskiego i ta hodowla zapewni Ci to.</p>
+                            <h2><?php echo $translate->dlaczegoHodowlaRacjonalnePolowanie; ?></h2>
+                            <p><?php echo $translate->txt1; ?></p>
+                            <p><?php echo $translate->txt2; ?></p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-paw"></i>
@@ -44,9 +55,9 @@
                     </div>
                     <div class="element">
                         <div>
-                            <h2>Tresura wyżła</h2>
-                            <p>Pies powinien być od najmłodszych dni otoczony opieką, socjalizowany oraz uczony współpracy z człowiekiem.</p>
-                            <p>Odpowiednie wzmacnianie więzi, a wraz z tym chęci do współpracy, nagradzanie właściwych reakcji, nauka posłuszeństwa to na początek. Potem nadchodzą kolejne etapy w zależności od przeznaczenia Twojego psa</p>
+                            <h2><?php echo $translate->tresuraWyzla; ?></h2>
+                            <p><?php echo $translate->txt3; ?></p>
+                            <p><?php echo $translate->txt4; ?></p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-bone"></i>
@@ -54,10 +65,10 @@
                     </div>
                     <div class="element">
                         <div>
-                            <h2>FCI - Międzynarodowa Federacja Kynologiczna</h2>
-                            <p>FCI jest nadrzędną jednostką dla najważniejszych organizacji kynologicznych.</p>
-                            <p>Federacja zrzesza członków na całym świecie i każdy z nich posiada certyfikat potwierdzający przynależność.</p>
-                            <p>Możesz nas znaleźć na liście hodowców po wpisaniu pierwszych liter nazwy naszej hodowli na oficjalnej stronie FCI, którą znajdziesz   <a target="_blank" href="http://www.fci.be/en/affixes/?lang=en&fbclid=IwAR1W4cZSGht6SH1kxcGLOQvsFN7vktnOIb48d9gbC0h2PQEYUpBmCc8GTgY">tutaj.</a> Polski Związek Kynologiczny należy do federacji.</p>
+                            <h2>FCI - <?php echo $translate->miedzynarodowaFederacjaKynologiczna; ?></h2>
+                            <p><?php echo $translate->txt5; ?></p>
+                            <p><?php echo $translate->txt6; ?></p>
+                            <p><?php echo $translate->txt58; ?>   <a target="_blank" href="http://www.fci.be/en/affixes/?lang=en&fbclid=IwAR1W4cZSGht6SH1kxcGLOQvsFN7vktnOIb48d9gbC0h2PQEYUpBmCc8GTgY"><?php echo $translate->tutaj; ?>.</a> <?php echo $translate->txt8; ?></p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-trophy"></i>
@@ -69,17 +80,17 @@
             </section>
             <section class='ourDogs off'>
                 <div class="container">
-                    <h1>Nasze psy</h1>
+                    <h1><?php echo $translate->naszePsy; ?></h1>
                     <div class="element">
                         <div>
-                            <h2>Wyżeł niemiecki krótkowłosy – niezawodny, rodzinny pies myśliwski</h2>
-                            <p>Z nosem przy ziemi, przemierzając pola i lasy — to ulubione zajęcie wyżła niemieckiego krótkowłosego. Ten inteligentny pies myśliwski to szczególny pies do pracy, potrzebujący wiele wysiłku i wybiegania. Po wysiłku lubi być razem ze swoją rodziną i okazuje się przywiązanym jej członkiem.</p>
+                            <h2><?php echo $translate->wyzelNiemieckiKrotkowlosy; ?></h2>
+                            <p><?php echo $translate->txt9; ?></p>
                         </div>
                     </div>
                     <div class="element">
                         <div>
                             <h2>Yuma</h2>
-                            <p>Pełna pasji i energii, zrównoważona i z silnymi nerwami. Yuma to pies który uwielbia polować na pióro i z zaangażowaniem głosi postrzałki.</p>
+                            <p><?php echo $translate->txt10; ?></p>
                         </div>
                         <a href="/Images/yuma.jpg" data-lightbox="achivments-set" data-title="Zmień zdjęcie używając strzałek"><img loading="lazy" src="Images/yuma.jpg" alt="yuma"/>
                         </a>
@@ -87,13 +98,13 @@
                     <div class="element">
                         <div>
                             <h2>Ars</h2>
-                            <p>Pewny siebie i chętny do pracy pies który został konsekwetnie wychowany, doskonale panuje nad swoim instynktami łowieckimi.</p>
+                            <p><?php echo $translate->txt11; ?></p>
                         </div>
                         <a href="/Images/ars.jpg" data-lightbox="achivments-set" data-title="Zmień zdjęcie używając strzałek"><img loading="lazy" src="Images/ars.jpg" alt="yuma"/>
                         </a>
                     </div>
                     <div class="element achivments">
-                        <h2>Osiągnięcia i rodowody</h2>
+                        <h2><?php echo $translate->osiagnieciaIRodowody; ?></h2>
                         <div>
                             <a href="/Images/yuma_rodowod.jpg" data-lightbox="achivments-set" data-title="Zmień zdjęcie używając strzałek"><img loading="lazy" src="Images/yuma_rodowod.jpg" alt="yuma"/>
                             </a>
@@ -107,7 +118,7 @@
             </section>
             <section class='gallery off'>
                 <div class="container">
-                    <h1>Galeria</h1>
+                    <h1><?php echo $translate->galeria; ?></h1>
                     <div class="galleryContainer">
                         <a href="/Images/photo_16.jpg" data-lightbox="example-set" data-title="Zmień zdjęcie używając strzałek"><img loading="lazy" src="Images/photo_16.jpg" alt="dog_photo"/>
                         </a>
@@ -166,7 +177,7 @@
             </section>
             <section class='contact off'>
                 <div class="container">
-                <h1>Kontakt</h1>
+                <h1><?php echo $translate->kontakt; ?></h1>
                 <div class="contactData">
                     <div>
                         <div class="icon home">
@@ -199,3 +210,14 @@
     <script src='include/main.js'></script>
 </body>
 </html>
+<?php
+if(isset($_GET["lang"])){
+    $lang = $_GET["lang"];
+    switch($lang){
+        case 'eng':
+            echo "<script>console.log(switchLang('".$lang."'))</script>";
+            break;
+        default:
+            echo "<script>console.log(switchLang('pl'))</script>";
+    }
+}
