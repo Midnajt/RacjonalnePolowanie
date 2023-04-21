@@ -204,6 +204,9 @@
         </main>
         <footer>
             <p>&copy Racjonalne Polowanie</p>
+            <a href="https://addpattern.it/" target="_blank">
+                <p>Projekt i opracowanie: AddPattern</p>
+            </a>
         </footer>
     </div>
     <script src='include/lightbox-plus-jquery.js'></script>
