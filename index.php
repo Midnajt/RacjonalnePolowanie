@@ -6,7 +6,66 @@
 
 ?>
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witryna nieosiągalna</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RET72TSHHB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RET72TSHHB');
+</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ta witryna jest nieosiągalna</h1>
+        <p>Przepraszamy, ale podany adres strony nie istnieje lub jest nieosiągalny.</p>
+    </div>
+</body>
+</html>
+
+<!-- <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,10 +76,18 @@
     <link rel="icon" href="Images/paw.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="style/lightbox.min.css">
-</head>
     <title>Racjonalne Polowanie</title>
-</head>
-<body>
+</head> -->
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RET72TSHHB"></script> -->
+<script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+
+//   gtag('config', 'G-RET72TSHHB');
+</script>
+<!-- <body>
     <div class="wrapper">
         <header>
             <div>
@@ -212,7 +279,7 @@
     <script src='include/lightbox-plus-jquery.js'></script>
     <script src='include/main.js'></script>
 </body>
-</html>
+</html> -->
 <?php
 if(isset($_GET["lang"])){
     $lang = $_GET["lang"];
